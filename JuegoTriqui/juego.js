@@ -76,23 +76,27 @@ constructor(jugador1,jugador2){
     }
     pruebaTabla=()=>{
         let Tabla=
-        `<span onclick="a.Estado(1),a.determinarJugador()" id="1">1</span>
+        `
+        <div id="tablaJuego">
+        <span onclick="a.Estado(1),a.determinarJugador()"  id="1" class="text">1</span>
         <span>|</span>
-        <span onclick="a.Estado(2),a.determinarJugador()" id="2">2</span>
+        <span onclick="a.Estado(2),a.determinarJugador()" id="2"class="text">2</span>
         <span>|</span>
-        <span onclick="a.Estado(3),a.determinarJugador()" id="3">3</span>
+        <span onclick="a.Estado(3),a.determinarJugador()" id="3"class="text">3</span>
         <br>
-        <span onclick="a.Estado(4),a.determinarJugador()" id="4">4</span>
+        <span onclick="a.Estado(4),a.determinarJugador()" id="4"class="text">4</span>
         <span>|</span>
-        <span onclick="a.Estado(5),a.determinarJugador()" id="5">5</span>
+        <span onclick="a.Estado(5),a.determinarJugador()" id="5"class="text">5</span>
         <span>|</span>
-        <span onclick="a.Estado(6),a.determinarJugador()"id="6">6 </span>
+        <span onclick="a.Estado(6),a.determinarJugador()"id="6"class="text">6 </span>
         <br>
-        <span onclick="a.Estado(7),a.determinarJugador()"id="7">7</span>
+        <span onclick="a.Estado(7),a.determinarJugador()"id="7"class="text">7</span>
         <span>|</span>
-        <span onclick="a.Estado(8),a.determinarJugador()"id="8">8</span>
+        <span onclick="a.Estado(8),a.determinarJugador()"id="8"class="text">8</span>
         <span>|</span>
-        <span onclick="a.Estado(9),a.determinarJugador()"id="9">9</span>`;
+        <span onclick="a.Estado(9),a.determinarJugador()"id="9"class="text">9</span>
+        </div>
+        `;
         document.getElementById("tabla").innerHTML=Tabla;
     }
 //esta funcion se encarga de pasar si el jugador es jugador 1 o 2
@@ -110,14 +114,14 @@ constructor(jugador1,jugador2){
     Juego=(id,estado)=>{
         if(estado==1){
             
-                document.getElementById(id).innerHTML="X";
+                document.getElementById(id).innerHTML=`<span style ="color:red;">X</span>`;
                 b.ponerFigura(id,"X")
                 if(b.establecerGanador("X")==true){
                     alert(`El ganador es ${this.jugador1}`)
                 }
         }
         else if(estado==2){
-            document.getElementById(id).innerHTML="O";
+            document.getElementById(id).innerHTML=`<span style ="color:blue;">O</span>`;
             b.ponerFigura(id,"O")
             if(b.establecerGanador("O")==true){
                 alert(`El ganador es ${this.jugador2}`)
@@ -130,11 +134,11 @@ constructor(jugador1,jugador2){
         this.estadoJugador+=1;
         
         if(this.estadoJugador==1){
-            document.getElementById("asignar").innerHTML=`${this.jugador1}:`;
+            document.getElementById("asignar").innerHTML=`<span style="color:red;">${this.jugador1}:</span>`;
     
         }
         else if(this.estadoJugador==2){
-            document.getElementById("asignar").innerHTML=`${this.jugador2}:`;
+            document.getElementById("asignar").innerHTML=`<span style="color:blue;">${this.jugador2}:</span>`;
             this.estadoJugador=0;
         }
     }
