@@ -31,11 +31,15 @@ class Dom{
 }
 
 
-
-
-
-
-
+class audio{
+    
+    reproducirGanador=()=>{
+        const sonidoGanador = new Audio("audios/hehecough-graciosos.mp3");
+        sonidoGanador.play();
+        sonidoGanador.volume=0.2;
+        
+    }
+}
 
 class ImprimirTabla{
     estadoJugador=0;
@@ -118,6 +122,11 @@ constructor(jugador1,jugador2){
                 b.ponerFigura(id,"X")
                 if(b.establecerGanador("X")==true){
                     alert(`El ganador es ${this.jugador1}`)
+                    document.getElementById("ganador").innerHTML=`
+                    <p>Felicidades!!</p>
+                    El ganador es : ${this.jugador1}
+                `;
+                s.reproducirGanador();
                 }
         }
         else if(estado==2){
@@ -125,6 +134,11 @@ constructor(jugador1,jugador2){
             b.ponerFigura(id,"O")
             if(b.establecerGanador("O")==true){
                 alert(`El ganador es ${this.jugador2}`)
+                document.getElementById("ganador").innerHTML=`<div id="ganador">
+                    <p>Felicidades!!</p>
+                    El ganador es : ${this.jugador2}
+                </div>`;
+                s.reproducirGanador();
             }
         }
     
@@ -254,6 +268,7 @@ alert("vesmos nea ")
 let a = new ImprimirTabla();
 const b = new Tabla();
 const c = new Dom();
+const s = new audio();
 
 
 b.Tablas();
