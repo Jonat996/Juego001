@@ -1,0 +1,1 @@
+Este es un juego de Tres en Raya, es una primera version de cuando estaba aprendiendo a manejar javascript, puedes dirigirte a TriquiUpdate alli tengo el codigo de este juego ya actualizado y puedes ver como ha cambiado mi codigo.
